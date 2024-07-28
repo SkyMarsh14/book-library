@@ -21,17 +21,21 @@ myLibrary.push(harryPotter);
 
 //Array to store user input
 
-let title;
-let author;
-let pages;
-let read;
 
-function addBookToLibrary(){
-    title= prompt("What's the title of the book?");
-    author = prompt ("Who's an author of the book?");
-    pages = prompt ("How many pages does the book have?");
-    read = confirm (" Have you read the book? ");
+const bookForm=document.querySelector('#bookForm');
 
-    const bookOne=new Book(title,author, pages, read);
-    myLibrary.push(bookOne);
-}
+bookForm.addEventListener("submit", (e)=>{
+    e.preventDefault();
+   
+    let title = document.querySelector('#book-title');
+    let author = document.querySelector('#book-author');
+    let pages = document.querySelector('#book-pages');
+    let read = document.querySelector('#readOrNot');
+
+    const book = new Book(title.value, author.value, pages.value, read.checked);
+
+    myLibrary.push(book);
+
+    bookForm.reset();
+    //resets the input field after submission.
+});

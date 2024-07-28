@@ -8,28 +8,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form action="">
+    <form action="" id="bookForm">
         <legend>Add book info here!</legend>
 
         <div class="form-row">
-            <label for="book-title">Title</label>
-            <input id="book-title"></input>
+            <label for="book-title">Title:</label>
+            <input id="book-title" required></input>
         </div>
 
         <div class="form-row">
-            <label for="book-author">Author</label>
-            <input id= 'book-author' type="text">
+            <label for="book-author" >Author:</label>
+            <input id= 'book-author' type="text" required>
         </div>
 
         <div class="form-row">
-            <label for="book-pages">Pages</label>
+            <label for="book-pages">Pages:</label>
             <input type="text" id="book-pages">
         </div>
         <div class="form-row">
-            <label for="">Check if you have Read this book</label>
+            <label for="readOrNot">Have you read this book yet?</label>
             <input type="checkbox" id="readOrNot">
         </div>
 
+        <button class="submitBtn" type="submit">Add book</button>
     </form>
 </body>
 </html>
