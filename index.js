@@ -15,9 +15,16 @@ function Book(title, author, pages, read){
         return bookInfo;
     }
 };
+
+//books that are put beforehand
 const harryPotter = new Book('Harry Potter', "JK Rowling", '800', false);
+const gatsby = new Book('The Great Gatsby', "F. Scott Fitzgerald" ,'345', true);
+const theLordOfTheRings = new Book('The Lord Of the Rings', "John Ronald Reuel", "655", false);
+const crimeAndPunishment = new Book("Crime and Punishment", "Fyodor Dostoevsky", '450', true);
+const kafkaOnTheShore = new Book("Kafka on the Shore", "Haruki Murakami", '250', false);
+
 const myLibrary=[];
-myLibrary.push(harryPotter);
+myLibrary.push(harryPotter,gatsby, theLordOfTheRings,crimeAndPunishment, kafkaOnTheShore);
 
 //Array to store user input
 
@@ -42,30 +49,33 @@ bookForm.addEventListener("submit", (e)=>{
     //resets the input field after submission.
 });
 
-// function displayBooks(){
-//     myLibrary.forEach(e)=>{
-
-//         const card = 
-//     }
-// }
-
 function displayFirstBook(){
-    const cardContainer = document.createElement('div');
     const mainContainer = document.querySelector('main');
-
-    const title = document.createElement('div');
-    const author = document.createElement('div');
-    const pages = document.createElement('div');
-    const read = document.createElement('div');
-
-    mainContainer.append(cardContainer);
-
-    let cardOne = myLibrary[0];
-
-    title.textContent =cardOne.title;
-    author.textContent = cardOne.author;
-    pages.textContent = cardOne.pages;
-    read.textContent = cardOne.read;
     
-    cardContainer.append(title, author, pages, read);
-}
+    myLibrary.forEach((e)=>{
+        
+        const cardContainer = document.createElement('div');
+        mainContainer.append(cardContainer);
+        
+        cardContainer.classList.add("cardContainer");
+        
+        const title = document.createElement('div');
+        const author = document.createElement('div');
+        const pages = document.createElement('div');
+        const read = document.createElement('div');
+        //add class later to use querySelectorAll
+        
+        title.textContent =e.title;
+        author.textContent = e.author;
+        pages.textContent = e.pages;
+        read.textContent = e.read;
+        
+        cardContainer.append(title, author, pages, read);
+
+        const cardInfo = cardContainer.querySelectorAll('div');
+        cardInfo.forEach((e)=>{
+            e.classList.add("card");
+        })
+    });
+};
+displayFirstBook();
