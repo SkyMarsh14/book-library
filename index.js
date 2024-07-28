@@ -15,6 +15,23 @@ function Book(title, author, pages, read){
         return bookInfo;
     }
 };
-    const book1 = new Book('Harry Potter', "JK Rowling", '800', false);
+const harryPotter = new Book('Harry Potter', "JK Rowling", '800', false);
+const myLibrary=[];
+myLibrary.push(harryPotter);
 
-    console.log(book1.info());
+//Array to store user input
+
+let title;
+let author;
+let pages;
+let read;
+
+function addBookToLibrary(){
+    title= prompt("What's the title of the book?");
+    author = prompt ("Who's an author of the book?");
+    pages = prompt ("How many pages does the book have?");
+    read = confirm (" Have you read the book? ");
+
+    const bookOne=new Book(title,author, pages, read);
+    myLibrary.push(bookOne);
+}
