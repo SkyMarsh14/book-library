@@ -46,12 +46,17 @@ bookForm.addEventListener("submit", (e)=>{
     myLibrary.push(book);
 
     bookForm.reset();
+
+    displayBook();
     //resets the input field after submission.
 });
 
-function displayFirstBook(){
-    const mainContainer = document.querySelector('main');
+const mainContainer = document.querySelector('main');
+function displayBook(){
+
+    mainContainer.innerHTML="";
     
+
     myLibrary.forEach((e)=>{
         
         const cardContainer = document.createElement('div');
@@ -66,16 +71,22 @@ function displayFirstBook(){
         //add class later to use querySelectorAll
         
         title.textContent =e.title;
-        author.textContent = e.author;
-        pages.textContent = e.pages;
-        read.textContent = e.read;
+        author.textContent = `Written by ${e.author}`;
+        pages.textContent = e.pages + " pages";
+        if(e.read){
+            read.textContent = "Status: Read"
+        }else{
+            read.textContent = "Status: Unread"
+        }
         
         cardContainer.append(title, author, pages, read);
 
         const cardInfo = cardContainer.querySelectorAll('div');
         cardInfo.forEach((e)=>{
-            e.classList.add("card");
+            e.classList.add("cardInfo");
         })
     });
+
 };
-displayFirstBook();
+
+displayBook();
