@@ -90,3 +90,10 @@ function displayBook(){
 };
 
 displayBook();
+
+const dialog = document.querySelector("dialog");
+const modalBtn = document.querySelector("button");
+
+modalBtn.addEventListener("click", ()=>{
+    dialog.showModal();
+});
