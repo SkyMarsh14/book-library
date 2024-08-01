@@ -68,3 +68,9 @@
   dialog{
     margin:auto;
   }
+header{
+  display:flex;
+  align-items: center;
+  gap:60%;
+  justify-content: center;
+}
