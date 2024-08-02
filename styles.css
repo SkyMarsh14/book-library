@@ -185,8 +185,17 @@ form{
     padding: 0.25em 0.75em;
   }
 }
-main button{
+main button:last-child{
   justify-self: center;
   background-color: #fca5a5;
   border-radius: 5px;
+}
+.toggleContainer{
+  display:flex;
+  justify-content:space-evenly;
+}
+main button:nth-child(5){
+  padding:0;
+  justify-self: center;
+  border:none;
 }
