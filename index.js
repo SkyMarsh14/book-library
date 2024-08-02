@@ -125,8 +125,12 @@ function addNewBook(e,index){
         if(this.textContent==="Status: Read"){
             this.textContent="Status: Unread";
         }else{
-            this.textContent="Status: Read"
+            this.textContent="Status: Read";
         }
+
+        let targetElement = myLibrary[e.target.parentElement.dataset.index];
+        targetElement.toggleStatus();
+
     });
     const cardInfo = cardContainer.querySelectorAll('div');
     cardInfo.forEach((element) => {
@@ -140,3 +144,7 @@ function addNewBook(e,index){
         });
     });
 };
+
+Book.prototype.toggleStatus = function(){
+    this.read = this.read? false:true;
+}
