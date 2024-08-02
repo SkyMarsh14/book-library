@@ -1,3 +1,5 @@
+const dialog = document.querySelector("dialog");
+const modalBtn = document.querySelector("button");
 function Book(title, author, pages, read){
     this.title=title;
     this.author=author;
@@ -55,6 +57,8 @@ bookForm.addEventListener("submit", (e)=>{
     let bookIndex = myLibrary.indexOf(book);
 
     addNewBook(myLibrary[bookIndex],bookIndex);
+
+    dialog.close();
 });
 
 const mainContainer = document.querySelector('main');
@@ -66,8 +70,6 @@ function displayBook() {
 }
 displayBook();
 
-const dialog = document.querySelector("dialog");
-const modalBtn = document.querySelector("button");
 
 const closeBtn = 
 modalBtn.addEventListener("click", ()=>{
