@@ -1,6 +1,7 @@
 const dialog = document.querySelector("dialog");
 const modalBtn = document.querySelector("button");
-function Book(title, author, pages, read){
+class Book{
+    constructor(title,author,pages,read){
     this.title=title;
     this.author=author;
     this.pages=pages;
@@ -17,6 +18,7 @@ function Book(title, author, pages, read){
         return bookInfo;
     }
 };
+}
 
 //books that are put beforehand
 const harryPotter = new Book('Harry Potter', "JK Rowling", '800', false);
