@@ -1,4 +1,4 @@
-function checkTitle(){
+export default function checkTitle(){
     const constraints={
         title:[
             "Title must be 6-30 charactors."
@@ -9,4 +9,10 @@ function checkTitle(){
         "^[A-Z][a-z]+\s[A-Z][a-z]+.{4,}$"
     ]
     }
+    const titleFiled =document.querySelector('#book-title');
+    const authorField=document.querySelector('#book-author');
+    const pagesField=document.querySelector('#book-pages');
+    debugger;
+
+    const constraint=new RegExp(constraints)
 }

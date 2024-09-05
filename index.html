@@ -36,15 +36,15 @@
             <legend>Add book info here!</legend>
             <div class="form-row">
                 <label for="book-title">Title:</label>
-                <input id="book-title" required></input>
+                <input id="book-title" required data-form-field="title"></input>
             </div>
             <div class="form-row">
                 <label for="book-author" >Author:</label>
-                <input id= 'book-author' type="text" required>
+                <input id= 'book-author' type="text" required data-form-field="author">
             </div>
             <div class="form-row">
                 <label for="book-pages">Pages:</label>
-                <input type="number" id="book-pages">
+                <input type="number" id="book-pages" min="30" max="5000" data-form-field="pages">
             </div>
             <div class="form-row">
                 <input type="checkbox" id="readOrNot">
